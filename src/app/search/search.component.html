@@ -3,6 +3,7 @@
 <input type="text" #searchBox>
 <button (click)="searchUsers(searchBox.value)">Search</button>
 
+<div *ngIf="searched && !users.length">No results</div>
 
 <div *ngFor="let user of users">
     <p (click)="selectUser(user)">{{user.display_name}}</p>

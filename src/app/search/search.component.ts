@@ -10,6 +10,7 @@ export class SearchComponent implements OnInit {
 
   users: Array<any> = [];
   currentUser: any = null;
+  searched: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -24,6 +25,7 @@ export class SearchComponent implements OnInit {
 
   updateList(list: any) {
     this.users = list.items;
+    this.searched = true;
   }
 
   selectUser(user: any) {
