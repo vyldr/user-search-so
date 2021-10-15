@@ -5,5 +5,13 @@
 
 
 <div *ngFor="let user of users">
-    <p>{{user.display_name}}</p>
+    <p (click)="selectUser(user)">{{user.display_name}}</p>
+    <ul *ngIf="user == currentUser">
+        <li>Location: {{user.location}}</li>
+        <li>Reputation: {{user.reputation}}</li>
+        <li>Gold: {{user.badge_counts.gold}}</li>
+        <li>Silver: {{user.badge_counts.silver}}</li>
+        <li>Bronze: {{user.badge_counts.bronze}}</li>
+        <li><a href="{{user.link}}">Profile link</a></li>
+    </ul>
 </div>

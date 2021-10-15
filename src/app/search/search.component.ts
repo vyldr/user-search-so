@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class SearchComponent implements OnInit {
 
   users: Array<any> = [];
+  currentUser: any = null;
 
   constructor(private http: HttpClient) { }
 
@@ -25,4 +26,7 @@ export class SearchComponent implements OnInit {
     this.users = list.items;
   }
 
+  selectUser(user: any) {
+    this.currentUser = user;
+  }
 }
