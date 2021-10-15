@@ -1,4 +1,9 @@
 <label>Search for a user</label>
 <br>
-<input type="text">
-<button>Search</button>
+<input type="text" #searchBox>
+<button (click)="searchUsers(searchBox.value)">Search</button>
+
+
+<div *ngFor="let user of users">
+    <p>{{user.display_name}}</p>
+</div>
